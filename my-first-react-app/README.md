@@ -70,6 +70,58 @@ A modern, responsive React application that helps you discover and search throug
    
    Navigate to `http://localhost:5173` to view the application
 
+## 🌐 Deployment
+
+### GitHub Pages Deployment
+
+This project is configured for easy deployment to GitHub Pages.
+
+#### Option 1: Automatic Deployment (Recommended)
+
+1. **Push your code to GitHub**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+2. **Set up GitHub Secrets**
+   - Go to your GitHub repository
+   - Navigate to Settings → Secrets and variables → Actions
+   - Add the following repository secrets:
+     - `VITE_TMDB_API_KEY`
+     - `VITE_APPWRITE_PROJECT_ID`
+     - `VITE_APPWRITE_DATABASE_ID`
+     - `VITE_APPWRITE_COLLECTION_ID`
+
+3. **Enable GitHub Pages**
+   - Go to Settings → Pages
+   - Set source to "GitHub Actions"
+   - The workflow will automatically deploy on every push to main
+
+#### Option 2: Manual Deployment
+
+1. **Update the homepage in package.json**
+   ```json
+   "homepage": "https://yourusername.github.io/your-repo-name"
+   ```
+
+2. **Deploy manually**
+   ```bash
+   npm run deploy
+   ```
+
+3. **Configure GitHub Pages**
+   - Go to Settings → Pages
+   - Set source to "Deploy from a branch"
+   - Select "gh-pages" branch and "/ (root)" folder
+
+#### Important Notes for Deployment
+
+- **Update the base URL**: Make sure the `base` in `vite.config.js` matches your repository name
+- **Environment Variables**: All environment variables must be set as GitHub Secrets for the build to work
+- **CORS Issues**: If you encounter CORS issues, ensure your API keys are properly configured
+
 ## 📁 Project Structure
 
 ```
@@ -112,6 +164,7 @@ src/
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
+- `npm run deploy` - Deploy to GitHub Pages
 
 ## 🌟 Key Features Explained
 
