@@ -104,83 +104,10 @@ This project is configured for easy deployment on Render.
    - `VITE_APPWRITE_DATABASE_ID`
    - `VITE_APPWRITE_COLLECTION_ID`
 
-4. **Deploy**
-   - Click "Create Static Site"
-   - Render will automatically build and deploy your app
-   - Your site will be available at: `https://your-app-name.onrender.com`
-
-#### Manual Deployment with render.yaml
-
-If you prefer using the `render.yaml` configuration file:
-
-1. **Push your changes** (the render.yaml file is already configured)
-2. **Connect your repository** to Render
-3. **Render will automatically detect** the configuration and deploy
-
-### GitHub Pages Deployment
-
-This project is also configured for GitHub Pages deployment.
-
-#### Option 1: Automatic Deployment (Recommended)
-
-1. **Push your code to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-
-2. **Set up GitHub Secrets**
-   - Go to your GitHub repository
-   - Navigate to Settings → Secrets and variables → Actions
-   - Add the following repository secrets:
-     - `VITE_TMDB_API_KEY`
-     - `VITE_APPWRITE_PROJECT_ID`
-     - `VITE_APPWRITE_DATABASE_ID`
-     - `VITE_APPWRITE_COLLECTION_ID`
-
-3. **Enable GitHub Pages**
-   - Go to Settings → Pages
-   - Set source to "GitHub Actions"
-   - The workflow will automatically deploy on every push to main
-
-#### Option 2: Manual Deployment
-
-1. **Update the homepage in package.json**
-   ```json
-   "homepage": "https://yourusername.github.io/your-repo-name"
-   ```
-
-2. **Deploy manually**
-   ```bash
-   npm run deploy
-   ```
-
-3. **Configure GitHub Pages**
-   - Go to Settings → Pages
-   - Set source to "Deploy from a branch"
-   - Select "gh-pages" branch and "/ (root)" folder
-
 #### Important Notes for Deployment
 
 - **Environment Variables**: All environment variables must be set for the build to work
 - **CORS Issues**: If you encounter CORS issues, ensure your API keys are properly configured
-- **Build Time**: Render builds typically take 2-5 minutes for the first deployment
-
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── MovieCard.jsx      # Individual movie display component
-│   ├── Search.jsx         # Search input component
-│   └── spinner.jsx        # Loading spinner component
-├── assets/                # Static assets
-├── App.jsx               # Main application component
-├── appwrite.js           # Appwrite backend integration
-├── main.jsx             # Application entry point
-└── index.css            # Global styles
-```
 
 ## 🎯 How It Works
 
@@ -189,11 +116,6 @@ src/
 - Search is debounced (500ms delay) to prevent excessive API calls
 - Results are fetched from TMDB API in real-time
 - Search analytics are tracked in Appwrite database
-
-### Trending Movies
-- Displays the top 5 most searched movies
-- Data is stored and retrieved from Appwrite
-- Updates automatically based on user search patterns
 
 ### Movie Display
 - Each movie shows:
@@ -246,9 +168,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Vite](https://vitejs.dev/) for the build tool
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 
-## 📞 Support
-
-If you encounter any issues or have questions, please open an issue in the repository.
 
 ---
 
