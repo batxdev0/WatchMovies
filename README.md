@@ -1,5 +1,7 @@
 # Movie Search App 🎬
 
+🚀 **[Live Demo](https://watchmovies-suit.onrender.com)** — See the project in action!
+
 A modern, responsive React application that helps you discover and search through thousands of movies. Built with React 19, Vite, and Tailwind CSS, this app provides an intuitive interface for movie discovery with real-time search capabilities and trending movie tracking.
 
 ## ✨ Features
@@ -70,6 +72,101 @@ A modern, responsive React application that helps you discover and search throug
    
    Navigate to `http://localhost:5173` to view the application
 
+## 🌐 Deployment
+
+### Render Deployment (Recommended)
+
+This project is configured for easy deployment on Render.
+
+#### Automatic Deployment on Render
+
+1. **Push your code to GitHub**
+   ```bash
+   git add .
+   git commit -m "Add Render deployment configuration"
+   git push origin main
+   ```
+
+2. **Connect to Render**
+   - Go to [Render Dashboard](https://dashboard.render.com/)
+   - Click "New +" and select "Static Site"
+   - Connect your GitHub repository
+   - Configure the following settings:
+     - **Name**: `watchmovies-app` (or your preferred name)
+     - **Build Command**: `npm install && npm run build`
+     - **Publish Directory**: `dist`
+     - **Branch**: `main`
+
+3. **Set Environment Variables**
+   In the Render dashboard, add these environment variables:
+   - `VITE_TMDB_API_KEY`
+   - `VITE_APPWRITE_PROJECT_ID`
+   - `VITE_APPWRITE_DATABASE_ID`
+   - `VITE_APPWRITE_COLLECTION_ID`
+
+4. **Deploy**
+   - Click "Create Static Site"
+   - Render will automatically build and deploy your app
+   - Your site will be available at: `https://your-app-name.onrender.com`
+
+#### Manual Deployment with render.yaml
+
+If you prefer using the `render.yaml` configuration file:
+
+1. **Push your changes** (the render.yaml file is already configured)
+2. **Connect your repository** to Render
+3. **Render will automatically detect** the configuration and deploy
+
+### GitHub Pages Deployment
+
+This project is also configured for GitHub Pages deployment.
+
+#### Option 1: Automatic Deployment (Recommended)
+
+1. **Push your code to GitHub**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+2. **Set up GitHub Secrets**
+   - Go to your GitHub repository
+   - Navigate to Settings → Secrets and variables → Actions
+   - Add the following repository secrets:
+     - `VITE_TMDB_API_KEY`
+     - `VITE_APPWRITE_PROJECT_ID`
+     - `VITE_APPWRITE_DATABASE_ID`
+     - `VITE_APPWRITE_COLLECTION_ID`
+
+3. **Enable GitHub Pages**
+   - Go to Settings → Pages
+   - Set source to "GitHub Actions"
+   - The workflow will automatically deploy on every push to main
+
+#### Option 2: Manual Deployment
+
+1. **Update the homepage in package.json**
+   ```json
+   "homepage": "https://yourusername.github.io/your-repo-name"
+   ```
+
+2. **Deploy manually**
+   ```bash
+   npm run deploy
+   ```
+
+3. **Configure GitHub Pages**
+   - Go to Settings → Pages
+   - Set source to "Deploy from a branch"
+   - Select "gh-pages" branch and "/ (root)" folder
+
+#### Important Notes for Deployment
+
+- **Environment Variables**: All environment variables must be set for the build to work
+- **CORS Issues**: If you encounter CORS issues, ensure your API keys are properly configured
+- **Build Time**: Render builds typically take 2-5 minutes for the first deployment
+
 ## 📁 Project Structure
 
 ```
@@ -112,6 +209,7 @@ src/
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
+- `npm run deploy` - Deploy to GitHub Pages
 
 ## 🌟 Key Features Explained
 
