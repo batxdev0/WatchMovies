@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: watchmovies-app
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_TMDB_API_KEY
+        sync: false
+      - key: VITE_APPWRITE_PROJECT_ID
+        sync: false
+      - key: VITE_APPWRITE_DATABASE_ID
+        sync: false
+      - key: VITE_APPWRITE_COLLECTION_ID
+        sync: false 

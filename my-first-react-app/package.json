@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://batxdev0.github.io/WatchMovies",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
