@@ -1,5 +1,7 @@
 # Movie Search App 🎬
 
+🚀 **[Live Demo](https://watchmovies-suit.onrender.com)** — See the project in action!
+
 A modern, responsive React application that helps you discover and search through thousands of movies. Built with React 19, Vite, and Tailwind CSS, this app provides an intuitive interface for movie discovery with real-time search capabilities and trending movie tracking.
 
 ## ✨ Features
